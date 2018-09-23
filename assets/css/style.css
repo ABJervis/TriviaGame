@@ -1,14 +1,29 @@
 body{
-    background: url(../images/KyloRen.jpg);
+    background: url(../images/darthvader2.jpg);
     background-repeat: no-repeat;
     background-size: auto; 
     font-family: 'Exo 2', sans-serif;
-    font-family: 'Fira Sans', sans-serif;  
+     
 }
 
 #header,#headerTwo{
 
-    color: rgba(0, 4, 255, 0.856);
+    color: rgb(238, 12, 12);
     margin-top: 20px; 
     align-content: center;
 }
+
+.questions{
+    color: white;
+    font-family: 'Fira Sans', sans-serif;  
+
+}
+
+#questionOne,#questionTwo,#questionThree,#questionFour,#questionFive {
+margin-top: 40px;
+}
+
+.answers{
+    margin-top: 10px;
+}
+    
