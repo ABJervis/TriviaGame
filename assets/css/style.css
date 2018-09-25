@@ -1,9 +1,7 @@
 body{
-    background: url(../images/darthvader2.jpg);
-    background-repeat: no-repeat;
-    background-size: auto; 
-    font-family: 'Exo 2', sans-serif;
-     
+    background: url(../images/darthvader3.jpg);
+    
+    font-family: 'Exo 2', sans-serif; 
 }
 
 #header,#headerTwo{
@@ -13,17 +11,13 @@ body{
     align-content: center;
 }
 
-.questions{
-    color: white;
-    font-family: 'Fira Sans', sans-serif;  
-
+#question-one,#question-two,#question-three,#question-four,#question-five {
+margin-top: 10px;
+color: antiquewhite;
+font-family: 'Fira Sans', sans-serif;  
 }
 
-#questionOne,#questionTwo,#questionThree,#questionFour,#questionFive {
-margin-top: 40px;
-}
-
-.answers{
-    margin-top: 10px;
+#submit{
+    margin-top: 20px;
 }
     
