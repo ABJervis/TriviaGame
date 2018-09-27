@@ -1,87 +1,90 @@
-
-
-
 $(document).ready(function () {
     var theQuotes = [{   
         quote: "I got a bad feeling about this.",
         answers:["Resistance","Empire"],
-        correctAnswer: "Resistance"
+        correctAnswer: 0
         },
         {
         quote: "You must do what you feel is right.",
         answers:["Resistance","Empire"],
-        correctAnswer: "Resistance"
+        correctAnswer: 0
         },
         {
         quote: "I find your lack of faith disturbing.",
         answers: ["Resistance","Empire"],
-        correctAnswer: "Empire"
+        correctAnswer: 1
         },
         {
         quote: "Aren't you a little short for a storm trooper?",
         answers: ["Resistance","Empire"],
-        correctAnswer: "Resistance"
+        correctAnswer: 0
         },
         {quote:"If you strike me down I shall become more powerful than you can possibly imagine.",
         answers: ["Resistance","Empire"],
-        correctAnswer: "Empire"
+        correctAnswer: 2
         } 
 ];
 
 
 //variables to hold needed information
 
-var correct = 0;
-var wrong = 0;
-var unanswered =0;
+var correct = 0
+var incorrect = 0
 
-//timer
-var time = 30;
-var intervalID;
+function startGame() {
 
-$("#start-button").on("click", run); //on click not associating with button click, but rather with page load
+    //to begin only the start button should show
 
-function run(){
-    clearInterval(intervalID);
-    intervalID = setInterval(decrement,1000);
+    $("#quiz").hide()
+    $("#start-button").show()
+    //results
+
+    $("#start-button").hide() //start button should go away after clicked
+    //start timer and quiz
+    run()
+    go()
+
+    $("#start-button").on("click", function(){
+        $("#start-button").hide
+    })
 }
 
-function decrement() {
-    time--;
 
-    $("#timer-space").html("<h3>" + "Time Remaining: " + time + "</h3>");
-    console.log(time)
+var timeRemaining = 30
+var intervalID
 
-    if (time === 0){
-        
-        stop();
+function run() {
+    clearInterval(intervalID)
+    intervalID = setInterval(decrement, 1000)
+}
 
-        alert("Time Up"); //do a show results here rather than times up alert
+function decrement(){
+    timeRemaining--;
+    $("#timer").html("<h3>Time remaining: " + timeRemaining)
+    
+    if (timeRemaining === 0){
+        $("#timer").html("<h3>Like the Death Star, your time has ceased to be.</h3>")
+        stop()
     }
 }
 
-function stop(){
-    clearInterval(intervalID);
+function stop() {
+    $("#submit").on("click", function () {
+        clearInterval(intervalID);
+        $("#quiz").hide()
+        
+        score() 
+    })
 }
-
-run();
-
-//get questions on page - html
-
-function showQuestions(){    
-    $(theQuotes).show().on("click")
-}
-  
-
-    //put in radio buttons
-
-
-
-
-
-
+    
+startGame()
+stop()
 
 })
+
+
+
+
 
 
 

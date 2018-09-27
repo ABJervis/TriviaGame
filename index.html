@@ -20,30 +20,56 @@
             <div class="col-sm-8">
                 <div id=header>
                     <h1>STAR WARS MOVIE QUOTES</h1>
-                <div id=headerTwo>
                     <h3>Search Your Feelings, Choose Your Path</h3>
-                </div>
+                    <p>You have 30 seconds to select who said the line. May the Force be with you!</p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="quiz-container">
-        <div id="quiz"></div>
+ 
+   
+     <!--start button-->
+     <div id = "start">
+            <button id="start-button">Start Quiz</button>
+     </div>
+
+    <div class="container" id="quiz-quotes">
+        <p>1.) "You're so right"?<br>
+            <button id= "incorrect">Tekka</button>
+            <button id= "incorrect">Poe</button>
+            <button id= "correct">Kylo Ren</button>
+        </p>
+        <p>2.) "You must do what you feel is right"?<br>
+            <button id= "incorrect">Luke</button>
+            <button id = "correct">Obi-Wan</button>
+            <button id = "incorrect">Qui-Gon</button>
+        </p>
+        <p>3.) "I find your lack of faith disturbing"?<br>
+            <button id= "correct">Darth Vader</button>
+            <button id = "incorrect">Darth Maul</button>
+            <button id = "incorrect">Yoda</button>
+        </p>
+        <P>4.) "There is a great disturbance in the Force"?<br>
+            <button id= "incorrect">Yoda</button>
+            <button id = "wrong">Han Solo</button>
+            <button id = "incorrect">Emperor Palpatine</button>
+        </P>
+        <p>5.) "You cannot escape your destiny. You must face Darth Vader again."<br>
+            <button id= "incorrect">Princess Leia</button>
+            <button id = "incorrect">Boba Fett</button>
+            <button id = "correct">Obi-Wan</button>
+        </p>
     </div>
    
-    <!--start button-->
-    <div id = "start">
-        <button id="start-button">Start Quiz</button>
-    </div>
     <!--need a button to submit quiz-->
     <div id = "finished">
         <button id="submit">Submit Quiz</button>
     </div>
 
-    <!--need to save space for the results-->
-    <div id="timer-space"></div>
-    <div id="quiz-result"></div>
-
+    <div class="container" id="results">
+        <div id="correct-answers"></div>
+        <div id="incorrect-answers"></div>
+    </div>
 
 </body>
 </html>

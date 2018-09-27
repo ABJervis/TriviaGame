@@ -4,20 +4,24 @@ body{
     font-family: 'Exo 2', sans-serif; 
 }
 
-#header,#headerTwo{
-
-    color: rgb(238, 12, 12);
-    margin-top: 20px; 
+#header, .rules{
+    margin-top: 10px;
     align-content: center;
 }
 
-#question-one,#question-two,#question-three,#question-four,#question-five {
+
+
+
+
+#quiz-quotes{
 margin-top: 10px;
-color: antiquewhite;
+padding: 10px;
+color: rgb(238, 12, 12);
 font-family: 'Fira Sans', sans-serif;  
 }
 
 #submit{
     margin-top: 20px;
+    margin-left: 180px;
 }
     
