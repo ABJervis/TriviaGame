@@ -1,91 +1,69 @@
-$(document).ready(function () {
-    var theQuotes = [{   
-        quote: "I got a bad feeling about this.",
-        answers:["Resistance","Empire"],
-        correctAnswer: 0
-        },
-        {
-        quote: "You must do what you feel is right.",
-        answers:["Resistance","Empire"],
-        correctAnswer: 0
-        },
-        {
-        quote: "I find your lack of faith disturbing.",
-        answers: ["Resistance","Empire"],
-        correctAnswer: 1
-        },
-        {
-        quote: "Aren't you a little short for a storm trooper?",
-        answers: ["Resistance","Empire"],
-        correctAnswer: 0
-        },
-        {quote:"If you strike me down I shall become more powerful than you can possibly imagine.",
-        answers: ["Resistance","Empire"],
-        correctAnswer: 2
-        } 
-];
-
-
-//variables to hold needed information
+//variables to hold needed information, in this case answer tally
 
 var correct = 0
 var incorrect = 0
 
+//need to start the game - click start button starts timer, hides start button and shows questions
+
 function startGame() {
+    $("#quiz-quotes").hide()
+    $("#results").hide()
 
-    //to begin only the start button should show
-
-    $("#quiz").hide()
-    $("#start-button").show()
-    //results
-
-    $("#start-button").hide() //start button should go away after clicked
-    //start timer and quiz
-    run()
-    go()
+    //set on click to start the game, otherwise - nothing
 
     $("#start-button").on("click", function(){
-        $("#start-button").hide
+        $("#start").hide()
+        $("#quiz-quotes").show()
+        run()
     })
 }
 
 
-var timeRemaining = 30
-var intervalID
+//set the timer so variables, then function to do so - excellent resource in previous activity for reference
 
-function run() {
-    clearInterval(intervalID)
-    intervalID = setInterval(decrement, 1000)
+var timerSeconds = 30;
+var intervalID;
+
+function run(){
+    clearInterval(intervalID);
+    intervalID = setInterval(decrement,1000)
 }
 
 function decrement(){
-    timeRemaining--;
-    $("#timer").html("<h3>Time remaining: " + timeRemaining)
-    
-    if (timeRemaining === 0){
-        $("#timer").html("<h3>Like the Death Star, your time has ceased to be.</h3>")
-        stop()
+    timerSeconds--;
+    $("#countdown").html("Time Remaining: " + timerSeconds)
+    console.log(timerSeconds)
+
+    if(timerSeconds === 0){
+        stop();
+        $("#countdown").html("Time's Up!");
+        alert("Time Up");
+       
     }
 }
+    
+    
+//have to say what stop is...how does the game stop? EIther, time is up or submit is clicked
 
-function stop() {
-    $("#submit").on("click", function () {
+function stop(){
+    $("#submit").on("click",function(){
+        alert("clicked");
         clearInterval(intervalID);
-        $("#quiz").hide()
-        
-        score() 
+        $("#quiz-quotes").hide()  //slack tip from homework channel
+    
     })
 }
-    
+
+
+//things left undone that need done
+//need to tally and display the results, this is a conditional that adds to the appropriate variable
+//on click for submit button does not work
+//timer continues to countdown into the negative...does it need to have a stop associated once it hits 0
+//timer doesn't start with click as it should, starts with page load
+
+
 startGame()
-stop()
-
-})
-
-
-
-
-
+run()
 
 
 
